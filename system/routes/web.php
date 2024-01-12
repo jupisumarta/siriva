@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\PemeriksaanController;
+use App\Http\Controllers\PasienController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,8 +27,6 @@ Route::get('logout', [AuthController::class, 'logout']);
 //nnti suai kan yak url yang mau kau pake ini cume nyobe
 Route::middleware('auth')->group(function () {
     Route::get('/', [BerandaController::class, 'dashboard']);
-    Route::get('periksa', [BerandaController::class, 'periksa']);
-    Route::get('pasien', [BerandaController::class, 'pasien']);
     Route::get('periksa-data', [BerandaController::class, 'periksaData']);
     Route::post('periksa-data', [BerandaController::class, 'storePeriksaData']);
     Route::get('periksa-pasien', [BerandaController::class, 'periksaPasien']);
@@ -44,5 +43,9 @@ Route::middleware('auth')->group(function () {
         Route::put('pemeriksaan/{pasien}/proses', 'proses');
         Route::get('pemeriksaan/create', 'create');
         Route::post('pemeriksaan/create', 'store');
+    });
+
+      Route::controller(PasienController::class)->group(function () {
+        Route::get('pasien', 'index');
     });
 });

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BerandaController;
+use App\Http\Controllers\PemeriksaanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,4 +32,17 @@ Route::middleware('auth')->group(function () {
     Route::post('periksa-data', [BerandaController::class, 'storePeriksaData']);
     Route::get('periksa-pasien', [BerandaController::class, 'periksaPasien']);
     // Route::get('dashboard', [BerandaController::class, 'dashboard']);
+
+
+
+
+
+      Route::controller(PemeriksaanController::class)->group(function () {
+        Route::get('pemeriksaan', 'index');
+        Route::get('pemeriksaan/{pasien}/cek-pasien', 'cek');
+        Route::get('pemeriksaan/{pasien}/detail', 'show');
+        Route::put('pemeriksaan/{pasien}/proses', 'proses');
+        Route::get('pemeriksaan/create', 'create');
+        Route::post('pemeriksaan/create', 'store');
+    });
 });

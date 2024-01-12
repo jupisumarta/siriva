@@ -7,7 +7,7 @@
                     <span class="nav-text">Dashboard</span>
                 </a>
             </li>
-            <li><a class="" href="{{ url('periksa') }}" aria-expanded="false">
+            <li><a class="" href="{{ url('pemeriksaan') }}" aria-expanded="false">
                     <i class="fa flaticon-093-waving"></i>
                     <span class="nav-text">Pemeriksaan</span>
                 </a>

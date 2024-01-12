@@ -12,8 +12,6 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    protected $table ='siriva_user';
-    protected $primaryKey ='user_id';
-
-    public $timestamps = false;
+    protected $table = 'sintari_user';
+    use HasFactory, Notifiable;
 }

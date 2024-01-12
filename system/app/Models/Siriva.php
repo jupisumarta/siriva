@@ -8,9 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Siriva extends Model
 {
     use HasFactory;
-    
     protected $table = 'siriva';
     protected $primaryKey = 'siriva_id';
-
-    public $timestamps = false;
 }

@@ -26,26 +26,25 @@ Route::get('logout', [AuthController::class, 'logout']);
 
 //nnti suai kan yak url yang mau kau pake ini cume nyobe
 Route::middleware('auth')->group(function () {
-    Route::get('/', [BerandaController::class, 'dashboard']);
-    Route::get('periksa-data', [BerandaController::class, 'periksaData']);
-    Route::post('periksa-data', [BerandaController::class, 'storePeriksaData']);
-    Route::get('periksa-pasien', [BerandaController::class, 'periksaPasien']);
+  Route::get('/', [BerandaController::class, 'dashboard']);
+  Route::get('periksa-data', [BerandaController::class, 'periksaData']);
+  Route::post('periksa-data', [BerandaController::class, 'storePeriksaData']);
+  Route::get('periksa-pasien', [BerandaController::class, 'periksaPasien']);
     // Route::get('dashboard', [BerandaController::class, 'dashboard']);
 
 
 
+  Route::controller(PemeriksaanController::class)->group(function () {
+    Route::get('pemeriksaan', 'index');
+    Route::get('pemeriksaan/{pasien}/cek-pasien', 'cek');
+    Route::get('pemeriksaan/{pasien}/detail', 'show');
+    Route::put('pemeriksaan/{pasien}/proses', 'proses');
+    Route::get('pemeriksaan/create', 'create');
+    Route::post('pemeriksaan/create', 'store');
+  });
 
-
-      Route::controller(PemeriksaanController::class)->group(function () {
-        Route::get('pemeriksaan', 'index');
-        Route::get('pemeriksaan/{pasien}/cek-pasien', 'cek');
-        Route::get('pemeriksaan/{pasien}/detail', 'show');
-        Route::put('pemeriksaan/{pasien}/proses', 'proses');
-        Route::get('pemeriksaan/create', 'create');
-        Route::post('pemeriksaan/create', 'store');
-    });
-
-      Route::controller(PasienController::class)->group(function () {
-        Route::get('pasien', 'index');
-    });
+  Route::controller(PasienController::class)->group(function () {
+    Route::get('pasien', 'index');
+    Route::get('pasien/{pasien}/history', 'history');
+  });
 });

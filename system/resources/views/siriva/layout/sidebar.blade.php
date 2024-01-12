@@ -13,7 +13,7 @@
                 </a>
             </li>
             <li><a class="" href="{{ url('pasien') }}" aria-expanded="false">
-                    <i class="fa flaticon-050-info"></i>
+                    <i class="fa fa-users"></i>
                     <span class="nav-text">Pasien</span>
                 </a>
             </li>

@@ -221,13 +221,7 @@
 												<div class="row">
 													<div class="mb-3 col-md-6">
 														<label class="form-label"><strong>Curiga Kanker</strong></label><br>
-														<label class="form-label">
-															@if($pasien->siriva_curiga_kanker == 1)
-															<b style="color:#BE0707">Curiga Kanker</b>
-															@else
-															<b style="color:#1DB515">Tidak Dicurigai</b>
-															@endif
-														</label>
+														<label class="form-label">{{ucwords($pasien->siriva_curiga_kanker)}}</label>
 													</div>
 													<div class="mb-3 col-md-6">
 														<label class="form-label"><strong>Pemeriksaan SSK</strong></label><br>
@@ -304,29 +298,27 @@
 									<form action="{{url('pemeriksaan',$pasien->siriva_id)}}/proses" method="post">
 										@csrf
 										@method("PUT")
-										
+
 										<div class="pt-3">
 											<div class="settings-form">
 												<h4 class="text-primary">Hasil SADANIS</h4>
-												
+
 												<div class="row">
 													<div class="mb-3 col-md-6">
-														<input type="checkbox" class="form-check-input" value="1" name="sadanis_normal" >
+														<input type="checkbox" class="form-check-input" value="1" name="sadanis_normal" @if($pasien->sadanis_normal == 1) checked @endif>
 														<label class="form-check-label">SADANIS Normal</label>
 													</div>
 													<div class="mb-3 col-md-6">
-														<input type="checkbox" value="1" name="sadanis_benjolan" class="form-check-input" >
+														<input type="checkbox" value="1" name="sadanis_benjolan" class="form-check-input" @if($pasien->sadanis_benjolan == 1) checked @endif>
 														<label class="form-check-label">SADANIS Benjolan</label>
 													</div>
 													<div class="mb-3 col-md-6">
-														<input type="checkbox" value="1" name="sadanis_kanker_payudara" class="form-check-input" >
+														<input type="checkbox" value="1" name="sadanis_kanker_payudara" class="form-check-input" @if($pasien->sadanis_kanker_payudara == 1) checked @endif>
 														<label class="form-check-label">Curiga Kanker Payudara</label>
 													</div>
 													<div class="mb-3 col-md-6">
-
-														<label class="form-check-label" >Kelainan payudara lain</label>
-														<input type="text" name="sadanis_kelainan" class="form-control" placeholder="isi disini" >
-
+														<label class="form-check-label">Kelainan payudara lain</label>
+														<input type="text" name="sadanis_kelainan" class="form-control" placeholder="isi disini" value="{{ $pasien->sadanis_kelainan }}">
 													</div>
 
 												</div>
@@ -334,7 +326,7 @@
 
 
 												<h4 class="text-primary">Anjuran SADANIS</h4>
-												
+
 												<div class="row">
 
 													<div class="mb-3 col-md-6">
@@ -362,23 +354,23 @@
 
 												<div class="row">
 													<div class="mb-3 col-md-6">
-														<input type="checkbox" value="1" name="iva_normal" class="form-check-input" >
+														<input type="checkbox" value="1" name="iva_normal" class="form-check-input" @if($pasien->iva_normal == 1) checked @endif>
 														<label class="form-check-label">IVA Normal</label>
 													</div>
 													<div class="mb-3 col-md-6">
-														<input type="checkbox" value="1" name="iva_servistis" class="form-check-input" >
+														<input type="checkbox" value="1" name="iva_servistis" class="form-check-input" @if($pasien->iva_servistis == 1) checked @endif>
 														<label class="form-check-label">Servistis</label>
 													</div>
 													<div class="mb-3 col-md-6">
-														<input type="checkbox" value="1" name="iva_positif" class="form-check-input" >
+														<input type="checkbox" value="1" name="iva_positif" class="form-check-input" @if($pasien->iva_positif == 1) checked @endif>
 														<label class="form-check-label">IVA +</label>
 													</div>
 													<div class="mb-3 col-md-6">
-														<input type="checkbox" value="1" name="iva_lesi_luas" class="form-check-input" >
+														<input type="checkbox" value="1" name="iva_lesi_luas" class="form-check-input" @if($pasien->iva_lesi_luas == 1) checked @endif>
 														<label class="form-check-label">Lesi Luas</label>
 													</div>
 													<div class="mb-3 col-md-6">
-														<input type="checkbox" value="1" name="iva_kanker_serviks" class="form-check-input" >
+														<input type="checkbox" value="1" name="iva_kanker_serviks" class="form-check-input" @if($pasien->iva_kanker_serviks == 1) checked @endif>
 														<label class="form-check-label">Curiga Kanker Serviks</label>
 													</div>
 													<div class="mb-3 col-md-6">
@@ -395,11 +387,11 @@
 												<div class="row">
 
 													<div class="mb-3 col-md-6">
-														<input type="checkbox" value="1" name="iva_anjuran_3" class="form-check-input" >
+														<input type="checkbox" value="1" name="iva_anjuran_3" class="form-check-input" @if($pasien->iva_anjuran_3 == 1) checked @endif>
 														<label class="form-check-label">IVA Ulang 3-5 Tahun</label>
 													</div>
 													<div class="mb-3 col-md-6">
-														<input type="checkbox" value="1" name="iva_anjuran_pap" class="form-check-input" >
+														<input type="checkbox" value="1" name="iva_anjuran_pap" class="form-check-input" @if($pasien->iva_anjuran_pap == 1) checked @endif>
 														<label class="form-check-label">PAP Smear</label>
 													</div>
 
@@ -417,19 +409,13 @@
 
 														<label class="form-check-label" >Kontrol Ulang</label>
 														<select class="default-select form-control wide mb-3" name="iva_kontrol_ulang">
-															<option value="1 Bulan">1 Bulan</option>
-															<option value="6 Bulan">6 Bulan</option>
-															<option value="1 Tahun">1 Tahun</option>
+															<option value="" selected>{{$pasien->iva_kontrol_ulang}}</option>
 														</select>
 													</div>
 													<div class="mb-3 col-md-6">
 
 														<label class="form-check-label">Rujukan</label>
-														<input type="text" name="siriva_rujukan" class="form-control" placeholder="isikan kalau ada" >
-													</div>
-													<div class="mb-3 col-12">
-														<button type="submit" class="btn btn-danger">PROSES SIRIVA</button>
-
+														<input type="text" value="{{$pasien->siriva_rujukan}}" name="siriva_rujukan" class="form-control" placeholder="isikan kalau ada" >
 													</div>
 
 
@@ -466,5 +452,5 @@
 				</div>
 			</div>
 		</div>
-		
+
 		@endsection

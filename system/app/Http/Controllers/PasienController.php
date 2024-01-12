@@ -12,8 +12,13 @@ use App\Http\Controllers\Controller;
 class PasienController extends Controller
 {
     function index(){
-        $data['list_pasien'] = Pasien::all();
+        $data['list_pasien'] = Siriva::all();
         return view('siriva.pasien.index',$data);
+    }
+
+    function history(Siriva $pasien){
+        $data['pasien'] = $pasien;
+        return view('siriva.pasien.history',$data);
     }
 
 }

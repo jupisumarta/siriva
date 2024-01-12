@@ -93,16 +93,20 @@
              <thead>
                  <tr class="bg-primary text-white">
                      <th>No</th>
+                     <th width="100px">No RM</th>
                      <th>Nama Pasien</th>
                      <th>Aksi</th>
                  </tr>
              </thead>
 
              <tbody>
-                 @foreach($list_pasien as $item)
+                 @foreach($list_pasien->sortByDesc('siriva_id') as $item)
                  <tr>
                     <td>{{$loop->iteration}}</td>
-                    <td>{{ucwords($item->siriva_nama_pasien)}}</td>
+                    <td>{{ucwords($item->siriva_rm)}}</td>
+                    <td><b>{{ucwords($item->siriva_nama_pasien)}}</b> <br>
+                        {{$item->created_at}}
+                    </td>
                     <td>
                         <a href="{{url('pemeriksaan',$item->siriva_id)}}/cek-pasien" class="btn btn-primary btn-sm">Cek Pasien</a>
                     </td>
@@ -114,6 +118,7 @@
             <tfoot>
              <tr class="bg-primary text-white">
                  <th>No</th>
+                 <th>No Rekam Medis</th>
                  <th>Nama Pasien</th>
                  <th>Aksi</th>
              </tr>

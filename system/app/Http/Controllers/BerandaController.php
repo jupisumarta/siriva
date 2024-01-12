@@ -12,8 +12,11 @@ use App\Http\Controllers\Controller;
 class BerandaController extends Controller
 {
     function dashboard(){
-
-        return view('siriva.dashboard');
+        $data['ivaPlus'] = Siriva::where('iva_positif',1)->count();
+        $data['curigaKanker'] = Siriva::where('siriva_curiga_kanker',1)->count();
+        $data['pencapaian'] = Siriva::where('siriva_status_periksa',2)->count();
+        $data['lesiLuas'] = Siriva::where('iva_lesi_luas',1)->count();
+        return view('siriva.dashboard',$data);
     }
 
     function periksa(){

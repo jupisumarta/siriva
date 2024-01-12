@@ -1,5 +1,6 @@
 @extends('siriva.base')
 @section('content')
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
         <!--**********************************
                 Content body start
@@ -55,7 +56,7 @@
                                         </span>
                                         <div class="media-body">
                                             <p class="mb-1">Capaian Target</p>
-                                            <h4 class="mb-0" id="absensi"></h4>
+                                            <h4 class="mb-0" id="absensi">{{$pencapaian}}</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -85,7 +86,7 @@
                                         </span>
                                         <div class="media-body text-white text-end">
                                             <p class="mb-1">IVA +</p>
-                                            <h3 class="text-white">- Orang</h3>
+                                            <h3 class="text-white">{{$ivaPlus}} Orang</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -137,7 +138,7 @@
                                         </span>
                                         <div class="media-body text-white text-end">
                                             <p class="mb-1">LESI LUAS</p>
-                                            <h3 class="text-white">- Orang</h3>
+                                            <h3 class="text-white">{{$lesiLuas}} Orang</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -161,7 +162,7 @@
                                         </span>
                                         <div class="media-body text-white text-end">
                                             <p class="mb-1">CURIGA KANKER SERVIKS</p>
-                                            <h3 class="text-white">- Orang</h3>
+                                            <h3 class="text-white">{{$curigaKanker}} Orang</h3>
                                         </div>
                                     </div>
                                 </div>
@@ -236,6 +237,8 @@
 
 
     </div>
+
+   
 
 
     <!--**********************************

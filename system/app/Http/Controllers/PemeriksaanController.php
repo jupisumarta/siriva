@@ -126,6 +126,6 @@ function proses(Siriva $pasien){
    $pasien->siriva_rujukan = request('siriva_rujukan') ?? 0;
    $pasien->iva_kontrol_ulang = request('iva_kontrol_ulang') ?? 0;
    $pasien->save();
-   return back()->with('success','Pasien telah diperoses');
+   return redirect('pemeriksaan')->with('success','Pasien telah diperoses');
 }
 }

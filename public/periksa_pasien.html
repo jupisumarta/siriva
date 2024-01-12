@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="keywords" content="" />
+	<meta name="author" content="" />
+	<meta name="robots" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Jobick : Job Admin Bootstrap 5 Template" />
+	<meta property="og:title" content="Jobick : Job Admin Bootstrap 5 Template" />
+	<meta property="og:description" content="Jobick : Job Admin Bootstrap 5 Template" />
+	<meta property="og:image" content="https://jobick.dexignlab.com/xhtml/social-image.png" />
+	<meta name="format-detection" content="telephone=no">
+	
+	<!-- PAGE TITLE HERE -->
+	<title>Jobick Job Admin</title>
+	
+	<!-- FAVICONS ICON -->
+	<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+	<link href="./vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+	<link href="./vendor/lightgallery/css/lightgallery.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+	<link href="./vendor/clockpicker/css/bootstrap-clockpicker.min.css" rel="stylesheet">
+    <!-- asColorpicker -->
+    <link href="./vendor/jquery-asColorPicker/css/asColorPicker.min.css" rel="stylesheet">
+    <!-- Material color picker -->
+    <link href="./vendor/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
+	<link rel="stylesheet" href="./vendor/pickadate/themes/default.css">
+    <link rel="stylesheet" href="./vendor/pickadate/themes/default.date.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+   <div id="preloader">
+		<div class="lds-ripple">
+			<div></div>
+			<div></div>
+		</div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <a href="index.html" class="brand-logo">
+				<img src="images/SIRIVANEW.png" width="100%">
+				
+
+            </a>
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+		<div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+							<div class="dashboard_bar">
+                                Periksa Pasien
+                            </div>
+							
+                        </div>
+                        <ul class="navbar-nav header-right"><li class="nav-item dropdown header-profile">
+                                <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
+                                    <div id="pegawaigambar"></div>
+                                </a>
+                                
+                            </li>
+							<li class="nav-item">
+								
+							</li>
+                        </ul>
+                    </div>
+				</nav>
+			</div>
+		</div>
+		
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="dlabnav">
+            <div class="dlabnav-scroll">
+				
+				<ul class="metismenu" id="menu">
+                    <li><a class="" href="index.html" aria-expanded="false">
+							<i class="flaticon-025-dashboard"></i>
+							<span class="nav-text">Dashboard</span>
+						</a>
+                    </li>
+					<li><a class="" href="periksa.html" aria-expanded="false">
+							<i class="flaticon-093-waving"></i>
+							<span class="nav-text">Pemeriksaan</span>
+						</a>
+                    </li>
+                    <li><a class="" href="pasien.html" aria-expanded="false">
+						<i class="flaticon-050-info"></i>
+							<span class="nav-text">Pasien</span>
+						</a>
+					</li>
+                    
+                </ul>
+				<div class="plus-box">
+					<p class="fs-14 font-w600 mb-2">SIRIVA <br>memudahkan<br>Pengawasan,<br>Pemeriksaan<br>IVA</p>
+					<p>Untuk Ketapang lebih baik dan lebih sehat</p>
+					<img src="images/SIRIVA-LOGO KECIL.png" width="100%">
+				</div>
+				<div class="copyright">
+					<h3><strong  style="font-size: 25px;" class="text-danger">SIRIVA © 2024</strong></h3>
+				</div>
+			</div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+        <!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <div class="container-fluid">
+				
+				
+				<div class="row page-titles">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item active"><a href="javascript:void(0)">Periksa Pasien</a></li>
+					</ol>
+                </div>
+                <!-- row -->
+                
+                <div class="row">
+                    
+                    <div class="col-xl-8">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="profile-tab">
+                                    <div class="custom-tab-1">
+                                        <ul class="nav nav-tabs">
+                                            <li class="nav-item"><a href="#identitas" data-bs-toggle="tab" class="nav-link active show">Identitas</a>
+                                            </li>
+											<li class="nav-item"><a href="#riwayat" data-bs-toggle="tab" class="nav-link">Riwayat</a>
+                                            </li>
+                                            <li class="nav-item"><a href="#keluhan" data-bs-toggle="tab" class="nav-link">Keluhan</a>
+                                            </li>
+                                            <li class="nav-item"><a href="#pemeriksaan" data-bs-toggle="tab" class="nav-link">Pemeriksaan</a>
+                                            </li>
+											<li class="nav-item"><a href="#proses" data-bs-toggle="tab" class="nav-link">Proses</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div id="identitas" class="tab-pane fade active show">
+                                                <div class="pt-3">
+                                                    <div class="settings-form">
+                                                        <h4 class="text-primary">Identitas Pasien</h4>
+                                                        <form>
+                                                            <div class="row">
+                                                                <div class="mb-3 col-md-6">
+                                                                    <label class="form-label"><strong>Nama Pasien</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+                                                                <div class="mb-3 col-md-6">
+                                                                    <label class="form-label"><strong>Suku Pasien</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label class="form-label"><strong>Alamat Pasien</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label class="form-label"><strong>Kelurahan / Desa Pasien</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="mb-3 col-md-6">
+                                                                    <label class="form-label"><strong>Nama Suami</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+                                                                <div class="mb-3 col-md-4">
+                                                                    <label class="form-label"><strong>Berat Badan Pasien</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+                                                                <div class="mb-3 col-md-2">
+                                                                    <label class="form-label"><strong>Tinggi Pasien</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+                                                            </div>
+															<div class="row">
+                                                                <div class="mb-3 col-md-6">
+                                                                    <label class="form-label"><strong>Status Kawin Pasien</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+                                                                <div class="mb-3 col-md-4">
+                                                                    <label class="form-label"><strong>Status Kawin Suami</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+                                                                <div class="mb-3 col-md-2">
+                                                                    <label class="form-label"><strong>Pendidikan Pasien</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+                                                            </div>
+															<div class="row">
+                                                                <div class="mb-3 col-md-6">
+                                                                    <label class="form-label"><strong>Pendidikan Suami</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                            
+                                                            
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="riwayat" class="tab-pane fade">
+												<div class="pt-3">
+                                                    <div class="settings-form">
+                                                        <h4 class="text-primary">Riwayat Pasien</h4>
+                                                        <form>
+                                                            <div class="row">
+                                                                <div class="mb-3 col-md-6">
+                                                                    <label class="form-label"><strong>Usia Pertama Haid</strong></label><br>
+																	<label class="form-label">Tahun</label>
+                                                                </div>
+                                                                <div class="mb-3 col-md-6">
+                                                                    <label class="form-label"><strong>Usia Pertama Kawin</strong></label><br>
+																	<label class="form-label">Tahun</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label class="form-label"><strong>Usia Pertama Hamil</strong></label><br>
+																	<label class="form-label">Tahun</label>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label class="form-label"><strong>HPHT</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="mb-3 col-md-6">
+                                                                    <label class="form-label"><strong>Manopause</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+                                                                <div class="mb-3 col-md-4">
+                                                                    <label class="form-label"><strong>Umur Manopause</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+                                                                <div class="mb-3 col-md-2">
+                                                                    <label class="form-label"><strong>Silus Haid</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+                                                            </div>
+															<div class="row">
+                                                                <div class="mb-3 col-md-6">
+                                                                    <label class="form-label"><strong>Jumlah Melahirkan</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+                                                                <div class="mb-3 col-md-4">
+                                                                    <label class="form-label"><strong>Status Kawin Suami</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+                                                                <div class="mb-3 col-md-2">
+                                                                    <label class="form-label"><strong>Pernah Menyusui</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+                                                            </div>
+															<div class="row">
+                                                                <div class="mb-3 col-md-6">
+                                                                    <label class="form-label"><strong>Caesar</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+																<div class="mb-3 col-md-6">
+                                                                    <label class="form-label"><strong>Ada keluarga sakit Kanker?</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+                                                                <div class="mb-3 col-md-6">
+                                                                    <label class="form-label"><strong>Siapa yang sakit</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+																<div class="mb-3 col-md-6">
+                                                                    <label class="form-label"><strong>Kanker apa?</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                            <div id="keluhan" class="tab-pane fade">
+												<div class="pt-3">
+                                                    <div class="settings-form">
+                                                        <h4 class="text-primary">Keluhan Pasien</h4>
+                                                        <form>
+                                                            <div class="row">
+                                                                <div class="mb-3 col-md-6">
+                                                                    <label class="form-label"><strong>Keluar banyak cairan / keputihan</strong></label><br>
+																	<label class="form-label">Tahun</label>
+                                                                </div>
+                                                                <div class="mb-3 col-md-6">
+                                                                    <label class="form-label"><strong>Nyeri dibawah perut / panggul</strong></label><br>
+																	<label class="form-label">Tahun</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label class="form-label"><strong>Pendarahan saat senggama</strong></label><br>
+																	<label class="form-label">Tahun</label>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label class="form-label"><strong>Pendarahan diluar haid</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="mb-3 col-md-6">
+                                                                    <label class="form-label"><strong>Benjolan Payudara / ketiak</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+                                                                <div class="mb-3 col-md-4">
+                                                                    <label class="form-label"><strong>Nyeri pada payudara</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+                                                                <div class="mb-3 col-md-2">
+                                                                    <label class="form-label"><strong>Cairan abnormal</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+                                                            </div>
+															<div class="row">
+                                                                <div class="mb-3 col-md-6">
+                                                                    <label class="form-label"><strong>Lainnya</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+                                                                
+                                                            </div>
+															
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                        	</div>
+											<div id="pemeriksaan" class="tab-pane fade">
+												<div class="pt-3">
+                                                    <div class="settings-form">
+                                                        <h4 class="text-primary">Pemeriksaan Pasien</h4>
+                                                        <form>
+                                                            <div class="row">
+                                                                <div class="mb-3 col-md-6">
+                                                                    <label class="form-label"><strong>Curiga Kanker</strong></label><br>
+																	<label class="form-label">Tahun</label>
+                                                                </div>
+                                                                <div class="mb-3 col-md-6">
+                                                                    <label class="form-label"><strong>Pemeriksaan SSK</strong></label><br>
+																	<label class="form-label">Tahun</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label class="form-label"><strong>Pengambilan PAP Smear</strong></label><br>
+																	<label class="form-label">Tahun</label>
+                                                            </div>
+                                                            <div class="mb-3">
+                                                                <label class="form-label"><strong>Hasil IVA</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="mb-3 col-md-6">
+                                                                    <label class="form-label"><strong>IVA Lainnya</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+                                                                <div class="mb-3 col-md-4">
+                                                                    <label class="form-label"><strong>Prebekrio Tip</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+                                                                <div class="mb-3 col-md-2">
+                                                                    <label class="form-label"><strong>Antibiotik Profiaksis</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+                                                            </div>
+															<div class="row">
+                                                                <div class="mb-3 col-md-6">
+                                                                    <label class="form-label"><strong>Penjelasan</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+																<div class="mb-3 col-md-6">
+                                                                    <label class="form-label"><strong>Payudara Kanan 1</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+                                                                <div class="mb-3 col-md-4">
+                                                                    <label class="form-label"><strong>Payudara Kanan 2</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+                                                                <div class="mb-3 col-md-2">
+                                                                    <label class="form-label"><strong>Payudara Kanan 3</strong></label><br>
+																	<label class="form-label">isi</label>
+																</div>
+																<div class="mb-3 col-md-2">
+                                                                    <label class="form-label"><strong>Payudara Kanan 4</strong></label><br>
+																	<label class="form-label">isi</label>
+																</div>
+																<div class="mb-3 col-md-6">
+                                                                    <label class="form-label"><strong>Payudara Kiri 1</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+                                                                <div class="mb-3 col-md-4">
+                                                                    <label class="form-label"><strong>Payudara Kiri 2</strong></label><br>
+																	<label class="form-label">isi</label>
+                                                                </div>
+                                                                <div class="mb-3 col-md-2">
+                                                                    <label class="form-label"><strong>Payudara Kiri 3</strong></label><br>
+																	<label class="form-label">isi</label>
+																</div>
+																<div class="mb-3 col-md-2">
+                                                                    <label class="form-label"><strong>Payudara Kiri 4</strong></label><br>
+																	<label class="form-label">isi</label>
+																</div>
+                                                                
+                                                            </div>
+															
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                        	</div>
+											<div id="proses" class="tab-pane fade">
+												<div class="pt-3">
+                                                    <div class="settings-form">
+                                                        <h4 class="text-primary">Hasil SADANIS</h4>
+                                                        <form>
+                                                            <div class="row">
+                                                                <div class="mb-3 col-md-6">
+																	<input type="checkbox" class="form-check-input" id="customCheckBox1" required>
+																	<label class="form-check-label" for="customCheckBox1">SADANIS Normal</label>
+                                                                </div>
+																<div class="mb-3 col-md-6">
+																	<input type="checkbox" class="form-check-input" id="customCheckBox1" required>
+																	<label class="form-check-label" for="customCheckBox1">SADANIS Benjolan</label>
+                                                                </div>
+																<div class="mb-3 col-md-6">
+																	<input type="checkbox" class="form-check-input" id="customCheckBox1" required>
+																	<label class="form-check-label" for="customCheckBox1">Curiga Kanker Payudara</label>
+                                                                </div>
+																<div class="mb-3 col-md-6">
+																	
+																	<label class="form-check-label" for="customCheckBox1">Kelainan payudara lain</label>
+																	<input type="text" name="tinggipasien" class="form-control" placeholder="isi disini" required>
+
+                                                                </div>
+																
+                                                            </div>
+                                                            
+															
+                                                       
+														<h4 class="text-primary">Anjuran SADANIS</h4>
+                                                        <form>
+                                                            <div class="row">
+                                                                
+																<div class="mb-3 col-md-6">
+																	<input type="checkbox" class="form-check-input" id="customCheckBox1" required>
+																	<label class="form-check-label" for="customCheckBox1">SADARI setiap bulan</label>
+                                                                </div>
+																<div class="mb-3 col-md-6">
+																	<input type="checkbox" class="form-check-input" id="customCheckBox1" required>
+																	<label class="form-check-label" for="customCheckBox1">SADANIS setiap tahun</label>
+                                                                </div>
+																<div class="mb-3 col-md-6">
+																	<input type="checkbox" class="form-check-input" id="customCheckBox1" required>
+																	<label class="form-check-label" for="customCheckBox1">USG usia 40 Tahun</label>
+                                                                </div>
+																<div class="mb-3 col-md-6">
+																	
+																	<label class="form-check-label" for="customCheckBox1">Mammografi 40 Tahun</label>
+																	<input type="text" name="tinggipasien" class="form-control" placeholder="isi disini" required>
+                                                                </div>
+																
+                                                            </div>
+                                                            
+											
+														<h4 class="text-primary">Hasil IVA</h4>
+                                                   
+                                                            <div class="row">
+                                                                <div class="mb-3 col-md-6">
+																	<input type="checkbox" class="form-check-input" id="customCheckBox1" required>
+																	<label class="form-check-label" for="customCheckBox1">IVA Normal</label>
+                                                                </div>
+																<div class="mb-3 col-md-6">
+																	<input type="checkbox" class="form-check-input" id="customCheckBox1" required>
+																	<label class="form-check-label" for="customCheckBox1">Servistis</label>
+                                                                </div>
+																<div class="mb-3 col-md-6">
+																	<input type="checkbox" class="form-check-input" id="customCheckBox1" required>
+																	<label class="form-check-label" for="customCheckBox1">IVA +</label>
+                                                                </div>
+																<div class="mb-3 col-md-6">
+																	<input type="checkbox" class="form-check-input" id="customCheckBox1" required>
+																	<label class="form-check-label" for="customCheckBox1">Lesi Luas</label>
+                                                                </div>
+																<div class="mb-3 col-md-6">
+																	<input type="checkbox" class="form-check-input" id="customCheckBox1" required>
+																	<label class="form-check-label" for="customCheckBox1">Curiga Kanker Serviks</label>
+                                                                </div>
+																<div class="mb-3 col-md-6">
+																	
+																	<label class="form-check-label" for="customCheckBox1">Kelainan Ginekologi Lain</label>
+																	<input type="text" name="tinggipasien" class="form-control" placeholder="isikan kalau ada" required>
+                                                                </div>
+																
+                                                            </div>
+                                                            
+												
+														<h4 class="text-primary">Anjuran IVA</h4>
+                                                
+                                                            <div class="row">
+                                                                
+																<div class="mb-3 col-md-6">
+																	<input type="checkbox" class="form-check-input" id="customCheckBox1" required>
+																	<label class="form-check-label" for="customCheckBox1">IVA Ulang 3-5 Tahun</label>
+                                                                </div>
+																<div class="mb-3 col-md-6">
+																	<input type="checkbox" class="form-check-input" id="customCheckBox1" required>
+																	<label class="form-check-label" for="customCheckBox1">PAP Smear</label>
+                                                                </div>
+																
+																
+                                                            </div>
+															<h4 class="text-primary">Krioterapi</h4>
+                                                   
+                                                            <div class="row">
+                                                                <div class="mb-3 col-md-6">
+																	
+																	<label class="form-check-label" for="customCheckBox1">Krioterapi Tanggal</label>
+																	<input name="datepicker" class="datepicker-default form-control" id="datepicker">
+                                                                </div>
+																<div class="mb-3 col-md-6">
+																	
+																	<label class="form-check-label" for="customCheckBox1">Kontrol Ulang</label>
+																	<select class="default-select form-control wide mb-3">
+																		<option>1 Bulan</option>
+																		<option>6 Bulan</option>
+																		<option>1 Tahun</option>
+																	</select>
+                                                                </div>
+																<div class="mb-3 col-md-6">
+																	
+																	<label class="form-check-label" for="customCheckBox1">Rujukan</label>
+																	<input type="text" name="tinggipasien" class="form-control" placeholder="isikan kalau ada" required>
+                                                                </div>
+																<div class="mb-3 col-12">
+																	<button type="submit" class="btn btn-danger">PROSES SIRIVA</button>
+
+																</div>
+
+																
+															</form>
+																
+																
+                                                            </div>
+                                                            
+															
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                        	</div>
+                                    </div>
+									<!-- Modal -->
+									<div class="modal fade" id="replyModal">
+										<div class="modal-dialog modal-dialog-centered" role="document">
+											<div class="modal-content">
+												<div class="modal-header">
+													<h5 class="modal-title">Post Reply</h5>
+													<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+												</div>
+												<div class="modal-body">
+													<form>
+														<textarea class="form-control" rows="4">Message</textarea>
+													</form>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-danger light" data-bs-dismiss="modal">btn-close</button>
+													<button type="button" class="btn btn-primary">Reply</button>
+												</div>
+											</div>
+										</div>
+									</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+
+
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+            <div class="copyright">
+                <p>Copyright © Designed &amp; Developed by <a href="https://dexignlab.com/" target="_blank">DexignLab</a> 2021</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button start
+        ***********************************-->
+
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+        
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+	
+	<!--removeIf(production)-->
+        
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="./vendor/global/global.min.js"></script>
+	<script src="./vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+    <script src="./vendor/chart.js/Chart.bundle.min.js"></script>
+	<script src="./vendor/lightgallery/js/lightgallery-all.min.js"></script>
+    <script src="./js/custom.min.js"></script>
+	<script src="./js/dlabnav-init.js"></script>
+	<script src="./vendor/pickadate/picker.js"></script>
+    <script src="./vendor/pickadate/picker.time.js"></script>
+    <script src="./vendor/pickadate/picker.date.js"></script>
+	<script src="./js/plugins-init/pickadate-init.js"></script>
+
+	<script src="vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+	
+    
+	
+	
+</body>
+</html>

@@ -25,5 +25,10 @@ Route::get('logout', [AuthController::class, 'logout']);
 //nnti suai kan yak url yang mau kau pake ini cume nyobe
 Route::middleware('auth')->group(function () {
     Route::get('/', [BerandaController::class, 'dashboard']);
+    Route::get('periksa', [BerandaController::class, 'periksa']);
+    Route::get('pasien', [BerandaController::class, 'pasien']);
+    Route::get('periksa-data', [BerandaController::class, 'periksaData']);
+    Route::post('periksa-data', [BerandaController::class, 'storePeriksaData']);
+    Route::get('periksa-pasien', [BerandaController::class, 'periksaPasien']);
     // Route::get('dashboard', [BerandaController::class, 'dashboard']);
 });

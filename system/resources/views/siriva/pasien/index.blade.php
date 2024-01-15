@@ -33,7 +33,11 @@
 						<td>{{$item->siriva_rm}}</td>
 						<td>{{ucwords($item->siriva_nama_pasien)}}</td>
 						<td>{{ucwords($item->siriva_alamat_pasien)}}</td>
-						<td>{{$item->siriva_telp}}</td>
+						<td>
+							{{$item->siriva_telp}} <br>
+							<a href="https://wa.me/{{$item->siriva_telp}}" target="_blank" class="btn btn-sm btn-primary"> <i class="fa fa-phone"></i> WhatsApp</a>
+
+						</td>
 						<td>
 							@if($item->siriva_curiga_kanker == 1)
 							<b style="color:#BE0707">Curiga Kanker</b>

@@ -12,7 +12,7 @@ use App\Http\Controllers\Controller;
 class PasienController extends Controller
 {
     function index(){
-        $data['list_pasien'] = Siriva::all();
+        $data['list_pasien'] = Siriva::where('siriva_status_periksa',2)->get();
         return view('siriva.pasien.index',$data);
     }
 

@@ -28,7 +28,7 @@
                                         </span>
                                         <div class="media-body">
                                             <p class="mb-1">Target Pemeriksaan</p>
-                                            <h4 class="mb-0" id="kinerja"></h4>
+                                            <h4 class="mb-0" id="kinerja">200</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -184,10 +184,6 @@
                                                 <circle cx="12" cy="7" r="4"></circle>
                                             </svg>
                                         </span>
-                                        <div class="media-body text-white text-end">
-                                            <p class="mb-1">KELAINAN SERVIKS LAIN</p>
-                                            <h3 class="text-white">- Orang</h3>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -210,7 +206,7 @@
                                         </span>
                                         <div class="media-body text-white text-end">
                                             <p class="mb-1">NORMAL</p>
-                                            <h3 class="text-white" id="jumabsensiperjalanandinas"></h3>
+                                            <h3 class="text-white" id="jumabsensiperjalanandinas">{{$normal}}</h3>
                                         </div>
                                     </div>
                                 </div>

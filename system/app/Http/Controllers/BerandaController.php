@@ -16,6 +16,7 @@ class BerandaController extends Controller
         $data['curigaKanker'] = Siriva::where('siriva_curiga_kanker',1)->count();
         $data['pencapaian'] = Siriva::where('siriva_status_periksa',2)->count();
         $data['lesiLuas'] = Siriva::where('iva_lesi_luas',1)->count();
+        $data['normal'] = Siriva::where('iva_normal',1)->count();
         return view('siriva.dashboard',$data);
     }
 
